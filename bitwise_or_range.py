@@ -13,10 +13,11 @@ def bitwise_or_range(m, n):
     return (n << i) + ((1<<i) - 1)
 
 def main():
-    a, b = 7, 21
-    print(f'[{a}, {b}] bitwise = {reduce(lambda a, b: a | b, range(a, b+1))}')
+    a, b = 7, 100
+    correct_res = reduce(lambda a, b: a | b, range(a, b+1))
+    print(f'[{a}, {b}] bitwise or: {bitwise_or_range(a, b)}')
     # Testing Purpose
-    print(bitwise_or_range(a, b) == reduce(lambda a, b: a | b, range(a, b+1)))
+    print(bitwise_or_range(a, b) == correct_res)
 
 if __name__ == '__main__':
     main()
